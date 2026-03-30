@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bright Smile Dental Clinic — AI Assistant</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- ─── SIDEBAR ──────────────────────────────────── -->
+    <aside class="sidebar">
+      <div class="clinic-brand">
+        <div class="brand-icon">🦷</div>
+        <div class="brand-text">
+          <h1>Bright Smile</h1>
+          <p>Dental Clinic</p>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3 class="section-title">Quick Actions</h3>
+        <div class="quick-btns">
+          <button class="quick-btn" onclick="quickAction('I want to book an appointment')">
+            📅 Book Appointment
+          </button>
+          <button class="quick-btn" onclick="quickAction('What dental services do you offer?')">
+            💡 Our Services
+          </button>
+          <button class="quick-btn" onclick="quickAction('I have tooth pain. What should I do?')">
+            🦷 Tooth Pain Help
+          </button>
+          <button class="quick-btn" onclick="showLookupModal()">
+            🔍 My Appointments
+          </button>
+        </div>
+      </div>
+
+      <div class="sidebar-section services-section">
+        <h3 class="section-title">Services & Pricing</h3>
+        <div id="serviceList" class="service-list">
+          <div class="loading-services">Loading…</div>
+        </div>
+      </div>
+
+      <div class="sidebar-section clinic-info">
+        <h3 class="section-title">Clinic Info</h3>
+        <div class="info-item">📍 123 Healthcare St, Ahmedabad</div>
+        <div class="info-item">📞 +91 98765 43210</div>
+        <div class="info-item">⏰ Mon–Sat: 9 AM – 6 PM</div>
+      </div>
+    </aside>
+
+    <!-- ─── CHAT AREA ─────────────────────────────────── -->
+    <main class="chat-main">
+      <header class="chat-header">
+        <div class="header-ai">
+          <div class="ai-avatar">🤖</div>
+          <div>
+            <span class="ai-name">Denta — AI Assistant</span>
+            <div class="ai-status">
+              <span class="dot"></span> Online · Powered by Ollama
+            </div>
+          </div>
+        </div>
+        <button class="clear-btn" onclick="clearChat()">🗑 Clear Chat</button>
+      </header>
+
+      <div class="messages" id="messages"></div>
+
+      <div class="typing-row" id="typing" style="display:none">
+        <div class="typing-bubble"><span></span><span></span><span></span></div>
+        <span class="typing-label">Denta is thinking…</span>
+      </div>
+
+      <div class="input-area">
+        <textarea
+          id="userInput"
+          rows="1"
+          placeholder="Ask me about dental care or type 'book appointment'…"
+        ></textarea>
+        <button id="sendBtn" onclick="sendMessage()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2.5">
+            <line x1="22" y1="2" x2="11" y2="13"/>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+        </button>
+      </div>
+    </main>
+  </div>
+
+  <!-- ─── LOOKUP MODAL ─────────────────────────────────── -->
+  <div id="lookupModal" class="modal-overlay" style="display:none">
+    <div class="modal-card">
+      <h2>🔍 Find My Appointments</h2>
+      <p>Enter your phone number to view your bookings.</p>
+      <input type="tel" id="lookupPhone" placeholder="+91 98765 43210" />
+      <div class="modal-actions">
+        <button class="btn-primary" onclick="lookupAppointments()">Search</button>
+        <button class="btn-ghost" onclick="closeLookupModal()">Cancel</button>
+      </div>
+      <div id="lookupResults"></div>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
