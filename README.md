@@ -1,4 +1,4 @@
-# 🦷 Bright Smile Dental Clinic — AI Appointment Assistant
+# Bright Smile Dental Clinic - AI Appointment Assistant
 
 > An AI-powered dental appointment booking system built with **FastAPI**, **SQLite**, and **Ollama (gpt-oss:120b-cloud)**.  
 > Patients can chat with **Denta**, the AI assistant, to get service recommendations, check availability, and book appointments — all stored in a real database.
