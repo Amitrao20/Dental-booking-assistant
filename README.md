@@ -300,11 +300,11 @@ You can test every API endpoint directly from the browser.
 **Request body:**
 ```json
 {
-  "patient_name": "Rahul Sharma",
-  "patient_phone": "9876543210",
-  "patient_email": "rahul@example.com",
+  "patient_name": "Amit Rao",
+  "patient_phone": "9803437850",
+  "patient_email": "amit@example.com",
   "service_id": 1,
-  "slot_id": 42,
+  "slot_id": 12,
   "notes": "Sensitive to cold water"
 }
 ```
@@ -313,11 +313,11 @@ You can test every API endpoint directly from the browser.
 ```json
 {
   "id": 1,
-  "patient_name": "Rahul Sharma",
-  "patient_phone": "9876543210",
+  "patient_name": "Amit rao",
+  "patient_phone": "9803437850",
   "service_id": 1,
   "dentist_id": 1,
-  "slot_id": 42,
+  "slot_id": 12,
   "status": "confirmed",
   "created_at": "2026-03-29T10:30:00"
 }
